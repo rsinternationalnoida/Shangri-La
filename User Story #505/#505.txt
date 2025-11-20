@@ -1,0 +1,21 @@
+
+
+
+Dependencies:
+	LWC:
+		GoalReassignmentSearch.js
+
+
+For the 1st Seller Lookup query:
+     Select Id, Name, Employee_Info__c From Contact Where RecordType.DeveloperName ='Staff' AND No_Show__c = false AND User_Group__c = 'Sales' AND (City__c = 'Singapore' OR Country__c = 'Singapore') AND Property__c = 'a000l00000J1CmXAAV'
+ 
+For modal Seller Lookup query:
+     Select Id, Name, Employee_Info__c From Contact Where RecordType.DeveloperName='Staff' AND Status__c = 'Active' AND User_Group__c = 'Sales' AND (City__c = 'Singapore' OR Country__c = 'Singapore') AND Property__c = 'a000l00000J1CmXAAV'  AND Id != '0030l00000s24wzAAA'
+	
+
+
+Changes applied for only Cluster User (Assign Seller):
+	If Goal Redeployment.Cluster = 'Singapore' || 'Hong Kong'
+		Select Id, Name, Employee_Info__c From Contact Where RecordType.DeveloperName='Staff' AND Status__c = 'Active' AND User_Group__c = 'Sales' AND Cluster__c = Goal Redeployment.Cluster AND Id != '0030l00000s24wzAAA'
+	If Goal Redeployment.Cluster != 'Singapore' || 'Hong Kong'
+		Select Id, Name, Employee_Info__c From Contact Where RecordType.DeveloperName='Staff' AND Status__c = 'Active' AND User_Group__c = 'Sales' AND (City__c = 'Singapore' OR Country__c = 'Singapore') AND Id != '0030l00000s24wzAAA'
