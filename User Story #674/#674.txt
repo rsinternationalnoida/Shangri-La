@@ -1,0 +1,27 @@
+674: Automate the Goal Creation for Account with contracts in QT
+-------------------------------------------------------------------------------------------------------------------------
+Requirement:
+	1. When the RFP -> Rate Loaded is true and Record Type is "Hotel Opportunity" then it should create a Goal (If there is no goal found based on the "Hotel Account Manager". (Worked By Nata)
+	2. If we have any Auto Goal is true on Goal record and someone try to delete the record, it should through an error called: "Auto Goal created from QT cannot be deleted." (Worked By Dharmendra)
+
+
+-------------------------------------------------------------------------------------------------------------------------
+There is a new task need your help to develop. 
+I have created a new field Auto Goal in Goal object. Can you restrict people to delete the record when Auto Goal = TRUE?
+https://shangri-la-corp--dev3.sandbox.lightning.force.com/lightning/r/Goal__c/a0Qfe00000DUWqtEAH/view
+
+Error Message: "Auto Goal created from QT cannot be deleted."
+
+
+Dependencies:
+	Trigger:
+		GoalTrigger
+	Apex Class:
+		ADGLIB_SObjectDomain
+		Goals
+		GoalTriggerTest
+Test class for the Validation:
+	ADGLIB_SObjectDomainTest,GoalTriggerTest
+
+
+
