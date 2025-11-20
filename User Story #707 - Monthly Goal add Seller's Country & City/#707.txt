@@ -1,0 +1,21 @@
+#707 - Monthly Goal add Seller's Country & City
+-------------------------------------------------------------------------------------------------------------------------
+Requirement:
+-------------------------------------------------------------------------------------------------------------------------
+	Populate the values when monthly goal is created or monthly goal's seller redeploy to another seller
+		Monthly Seller Country = Monthly_Goal__r.Seller__r.City__c
+		Monthly Seller City = Monthly_Goal__r.Seller__r.Country__c
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+Dependencies:
+-------------------------------------------------------------------------------------------------------------------------
+	Apex Trigger:
+		MonthlyGoalTrigger
+	Apex Class:
+		MonthlyGoalController
+		GoalReassignmentService
+		GoalReassignmentService_Test
+
+
